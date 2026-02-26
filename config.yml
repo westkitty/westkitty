@@ -1,0 +1,34 @@
+username: westkitty
+
+profile:
+  name: "West Kitty"
+  tagline: "Stinky Weasel Productions"
+  bio: |
+    West Kitty.
+
+social:
+  website: "https://github.com/westkitty"
+
+galaxy_arms:
+  - name: "Build"
+    color: "synapse_cyan"
+    items: ["TypeScript","React","Python","GitHub Actions"]
+  - name: "Make"
+    color: "dendrite_violet"
+    items: ["Tools","Automation","Interfaces","Creative Systems"]
+  - name: "Ship"
+    color: "axon_amber"
+    items: ["Docs","Pipelines","Maintenance","Reliability"]
+
+projects: []
+
+theme:
+  void: "#080c14"
+  nebula: "#0f1623"
+  star_dust: "#1a2332"
+  synapse_cyan: "#00d4ff"
+  dendrite_violet: "#a78bfa"
+  axon_amber: "#ffb020"
+  text_bright: "#f1f5f9"
+  text_dim: "#94a3b8"
+  text_faint: "#64748b"
