@@ -1,0 +1,97 @@
+version: 1
+
+policy:
+  default_visibility: hidden
+  public_projects_must_be_allowlisted: true
+  approval_is_manual: true
+  maximum_featured_projects: 6
+
+current_orbit:
+  - dex-dictate
+  - dex-cleaner
+  - parable
+
+projects:
+  - id: dex-dictate
+    name: "DexDictate"
+    repository: "westkitty/DexDictate_MacOS"
+    public: true
+    featured: true
+    canonical: true
+    category: accessible-systems
+    status: under-inspection
+    verification: ci-and-local
+    summary: "Local-first macOS dictation and communication system."
+    platforms: [macOS]
+    limitations:
+      - "macOS-specific runtime and permissions"
+      - "Optional Smart Cleanup may send text, never audio, to a user-configured service"
+
+  - id: dex-cleaner
+    name: "DexCleaner"
+    repository: "westkitty/DexCleaner_MacOS"
+    public: true
+    featured: true
+    canonical: true
+    category: accessible-systems
+    status: under-inspection
+    verification: build-and-tests
+    summary: "Conservative disk audit and exact-cache cleanup for macOS."
+    platforms: [macOS]
+    limitations:
+      - "Final Finder Trash, VoiceOver, signing, and clean-account release checks require real macOS validation"
+
+  - id: dexdraw
+    name: "DexDraw vNext"
+    repository: "westkitty/DexDraw_vNext"
+    public: true
+    featured: true
+    canonical: true
+    category: creative-infrastructure
+    status: prototype
+    verification: ci-and-e2e
+    summary: "Self-hosted collaborative whiteboard with server-authoritative synchronization."
+    platforms: [Web, Self-hosted]
+    limitations:
+      - "Prototype authentication, storage, rate limiting, and scaling boundaries are documented in the repository"
+
+  - id: dexkeeper
+    name: "DexKeeper Bot"
+    repository: "westkitty/DexKeeper_Bot"
+    public: true
+    featured: true
+    canonical: true
+    category: creative-infrastructure
+    status: maintenance
+    verification: ci-and-release
+    summary: "Self-hosted Telegram moderation and community operations."
+    platforms: [Docker, Windows, macOS, Linux]
+    release_url: "https://github.com/westkitty/DexKeeper_Bot/releases/latest"
+
+  - id: dndex
+    name: "DnDex Redux"
+    repository: "westkitty/DnDex_Redux"
+    public: true
+    featured: true
+    canonical: true
+    category: world-engines
+    status: prototype
+    verification: build-and-targeted-tests
+    summary: "Local-first encounter command center for tabletop play."
+    platforms: [Web, PWA]
+    limitations:
+      - "Canonical deployment and saved-state migration require continued verification"
+
+  - id: parable
+    name: "Parable"
+    repository: "westkitty/Parable"
+    public: true
+    featured: true
+    canonical: true
+    category: world-engines
+    status: prototype
+    verification: project-verifier
+    summary: "Ritual-first browser god-game prototype on living terrain."
+    platforms: [Web]
+    limitations:
+      - "Current runtime imports pinned Three.js modules from a CDN and is not offline-capable"
