@@ -1,0 +1,22 @@
+statuses:
+  dexter-approved:
+    label: "Dexter Approved"
+    meaning: "Released work supported by meaningful verification. Assignment is manual."
+  under-inspection:
+    label: "Under Inspection"
+    meaning: "Active work or a functional system still undergoing hardening or required platform validation."
+  prototype:
+    label: "Prototype"
+    meaning: "A functional experiment with declared limitations; not represented as a mature release."
+  maintenance:
+    label: "Maintenance"
+    meaning: "A stable public system receiving limited maintenance rather than active expansion."
+  paused:
+    label: "Paused"
+    meaning: "Intentionally not under current development."
+  superseded:
+    label: "Superseded"
+    meaning: "Replaced by a named canonical successor."
+  archived:
+    label: "Archived"
+    meaning: "Preserved for history with no expectation of further work."

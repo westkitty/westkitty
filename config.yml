@@ -1,26 +1,53 @@
 username: westkitty
 
 profile:
-  name: "West Kitty"
-  tagline: "Stinky Weasel Productions"
+  name: "Andrew Dolby / West Kitty"
+  tagline: "Stinky Weasel Productions — systems built under Dexter's supervision"
+  company: "Stinky Weasel Productions"
   bio: |
-    West Kitty.
+    Queer anarchist artist, systems architect, and myth-engineer.
+    Building local-first tools, accessible systems, creative infrastructure, and interactive worlds.
+  philosophy: '"Andrew makes the systems. Dexter determines whether they are acceptable."'
 
 social:
   website: "https://github.com/westkitty"
 
-galaxy_arms:
-  - name: "Build"
-    color: "synapse_cyan"
-    items: ["TypeScript","React","Python","GitHub Actions"]
-  - name: "Make"
-    color: "dendrite_violet"
-    items: ["Tools","Automation","Interfaces","Creative Systems"]
-  - name: "Ship"
-    color: "axon_amber"
-    items: ["Docs","Pipelines","Maintenance","Reliability"]
+dexter:
+  name: "Dexter"
+  role: "Quality authority"
+  image: "assets/source/dexter-profile.svg"
+  statement: "Andrew makes the systems. Dexter determines whether they are acceptable."
 
-projects: []
+galaxy_arms:
+  - name: "Accessible Systems"
+    color: "synapse_cyan"
+    items: ["Dictation", "Communication", "Swift", "Local AI"]
+  - name: "Creative Infrastructure"
+    color: "dendrite_violet"
+    items: ["TypeScript", "Collaboration", "Interfaces", "Project Systems"]
+  - name: "World Engines"
+    color: "axon_amber"
+    items: ["Games", "Narrative", "Simulation", "Mythic Systems"]
+
+projects:
+  - repo: "westkitty/DexDictate_MacOS"
+    arm: 0
+    description: "Local-first macOS dictation and communication system."
+  - repo: "westkitty/DexCleaner_MacOS"
+    arm: 0
+    description: "Conservative disk audit and exact-cache cleanup for macOS."
+  - repo: "westkitty/DexDraw_vNext"
+    arm: 1
+    description: "Self-hosted collaborative whiteboard with explicit prototype boundaries."
+  - repo: "westkitty/DexKeeper_Bot"
+    arm: 1
+    description: "Self-hosted Telegram moderation and community operations."
+  - repo: "westkitty/DnDex_Redux"
+    arm: 2
+    description: "Local-first encounter command center for tabletop play."
+  - repo: "westkitty/Parable"
+    arm: 2
+    description: "Ritual-first browser god-game prototype on living terrain."
 
 theme:
   void: "#080c14"
@@ -32,3 +59,10 @@ theme:
   text_bright: "#f1f5f9"
   text_dim: "#94a3b8"
   text_faint: "#64748b"
+
+stats:
+  metrics: ["commits", "stars", "prs", "issues", "repos"]
+
+languages:
+  exclude: ["HTML", "CSS", "Shell", "Makefile"]
+  max_display: 6

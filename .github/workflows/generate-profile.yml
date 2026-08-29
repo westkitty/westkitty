@@ -1,17 +1,57 @@
-name: Generate Profile SVGs
+name: Validate and Generate Profile
 
 on:
-  schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
-  push:
+  pull_request:
     paths:
+      - "README.md"
       - "config.yml"
+      - "profile/**"
+      - "scripts/**"
       - "generator/**"
+      - "tests/**"
+      - ".github/workflows/generate-profile.yml"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "config.yml"
+      - "profile/**"
+      - "scripts/**"
+      - "generator/**"
+      - "tests/**"
+      - ".github/workflows/generate-profile.yml"
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
 
 jobs:
+  validate:
+    name: Validate public profile contract
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install validation dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Validate public allowlist and evidence states
+        run: python scripts/validate_profile.py
+
+      - name: Run test suite
+        run: pytest
+
   generate:
     name: Generate galaxy profile assets
+    if: github.event_name != 'pull_request'
+    needs: validate
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -25,14 +65,17 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements-dev.txt
 
       - name: Generate SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m generator.main
 
-      - name: Commit and push if changed
+      - name: Revalidate generated public output
+        run: python scripts/validate_profile.py
+
+      - name: Commit generated assets if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
