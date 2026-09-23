@@ -4,23 +4,36 @@ profile:
   name: "West Kitty"
   tagline: "Stinky Weasel Productions"
   bio: |
-    West Kitty.
+    Interfaces, automation, local-first tools, and strange systems built to be used.
+  philosophy: '"Make the strange thing. Then make it work."'
 
 social:
-  website: "https://github.com/westkitty"
+  website: "https://westkitty.github.io/westkitty/"
 
 galaxy_arms:
   - name: "Build"
     color: "synapse_cyan"
-    items: ["TypeScript","React","Python","GitHub Actions"]
+    items: ["TypeScript", "React", "Python", "Swift"]
   - name: "Make"
     color: "dendrite_violet"
-    items: ["Tools","Automation","Interfaces","Creative Systems"]
+    items: ["Interfaces", "Automation", "Creative Systems", "Narrative Systems"]
   - name: "Ship"
     color: "axon_amber"
-    items: ["Docs","Pipelines","Maintenance","Reliability"]
+    items: ["GitHub Actions", "Docs", "Reliability", "Maintenance"]
 
-projects: []
+projects:
+  - repo: "westkitty/DexDictate_MacOS"
+    arm: 0
+    description: "Native macOS dictation designed to capture speech and put the text where it belongs."
+  - repo: "westkitty/Gay_Cast_PWA"
+    arm: 2
+    description: "Installable browser edition of GayCast with reliability and truthful failure states at the center."
+  - repo: "westkitty/AtlasOfOne"
+    arm: 1
+    description: "A living interface for deep personal cartography rather than a flat profile."
+  - repo: "westkitty/DexFoundry"
+    arm: 2
+    description: "Autonomous service operations from qualification through retention with accountability intact."
 
 theme:
   void: "#080c14"
